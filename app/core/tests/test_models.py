@@ -39,5 +39,3 @@ class ModelTests(TestCase):
         )
         self.assertTrue(user.is_superuser)
         self.assertTrue(user.is_staff)
-        #self.assertEqual(user.email, email)
-        #self.assertTrue(user.check_password(password))
