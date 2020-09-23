@@ -30,3 +30,7 @@ class IngredientViewSet(viewsets.GenericViewSet, mixins.ListModelMixin, mixins.C
     def get_queryset(self):
         """Return objects for teh current authenticate user only"""
         return self.queryset.filter(user=self.request.user).order_by('-name')
+
+    def perform_create(self, serializer):
+        """Create a new ingredient"""
+        serializer.save(user=self.request.user)
